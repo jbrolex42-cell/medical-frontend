@@ -1,13 +1,85 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased bg-gray-50 text-gray-900;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+
+  .btn-primary {
+    @apply bg-ems-navy hover:bg-ems-dark text-white font-semibold py-3 px-6 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed shadow-none;
+  }
+
+  .btn-secondary {
+    @apply bg-white border-2 border-ems-navy text-ems-navy hover:bg-ems-navy hover:text-white font-semibold py-3 px-6 rounded-full transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-ems-danger hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100 p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-ems-navy focus:ring-2 focus:ring-ems-navy/20 outline-none transition-all duration-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-ems-navy to-ems-accent bg-clip-text text-transparent;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+
+.leaflet-container {
+  border-radius: 1rem;
+  z-index: 0;
+}
+
+
+@keyframes emergency-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(231, 76, 60, 0);
+  }
+}
+
+.emergency-pulse {
+  animation: emergency-pulse 2s infinite;
 }
