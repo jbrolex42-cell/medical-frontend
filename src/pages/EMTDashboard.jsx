@@ -5,7 +5,7 @@ import {
   CheckCircle2, AlertCircle, User, Heart, Activity,
   ChevronRight, Menu, X, LogOut, Bell, Settings,
   FileText, Camera, Mic, Send, Map, Route
-} from 'lucide-react';
+       } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useSocket } from '../hooks/useSocket';
 import { useAuthStore } from '../stores/authStore';

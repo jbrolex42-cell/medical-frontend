@@ -8,7 +8,7 @@ import {
   XCircle, Navigation, Zap
 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
-import { api } from '../services/api';
+import api from '../services/api';
 import { useSocket } from '../hooks/useSocket';
 import { useAuthStore } from '../stores/authStore';
 import RealTimeMap from '../components/RealTimeMap';

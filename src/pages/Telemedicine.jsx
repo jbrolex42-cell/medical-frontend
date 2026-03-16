@@ -62,7 +62,7 @@ export default function Telemedicine() {
 
   // ✅ Safe confirm: disable ESLint for this line
   const handleEndCall = () => {
-    // eslint-disable-next-line no-restricted-globals
+     
     if (confirm('End this consultation?')) {
       navigate('/dashboard');
     }

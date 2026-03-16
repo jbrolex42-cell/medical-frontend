@@ -36,7 +36,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 
-import { api } from "../services/api";
+import api from "../services/api";
 import { useAuthStore } from "../stores/authStore";
 import MapComponent from "../components/MapComponent";
 

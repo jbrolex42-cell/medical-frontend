@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
-import { api } from '../services/api';
+import api from '../services/api';
 
 // Step components for clean code organization
 const StepIndicator = ({ currentStep, totalSteps }) => (

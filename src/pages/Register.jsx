@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
-import { api } from '../services/api';
+import api from '../services/api';
 import { useAuthStore } from '../stores/authStore';
 
 export default function Register() {
@@ -126,32 +126,39 @@ export default function Register() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!acceptedTerms) {
-      setErrors({ general: 'Please accept the terms and conditions' });
-      return;
-    }
-    
-    const payload = {
-      name: formData.name,
-      password: formData.password,
-      role: formData.role,
-      blood_group: formData.blood_group,
-      allergies: formData.allergies,
-      medical_conditions: formData.medical_conditions,
-      medications: formData.medications,
-      emergency_contact_name: formData.emergency_contact_name,
-      emergency_contact_phone: formData.emergency_contact_phone
-    };
-    
-    if (loginMethod === 'email') {
-      payload.email = formData.email;
-    } else {
-      payload.phone = formData.phone.replace(/\s/g, '');
-    }
-    
-    registerMutation.mutate(payload);
+  e.preventDefault();
+
+  if (!acceptedTerms) {
+    setErrors({ general: 'Please accept the terms and conditions' });
+    return;
+  }
+
+  const payload = {
+    name: formData.name,
+    password: formData.password,
+    role: formData.role,
+    blood_group: formData.blood_group,
+    allergies: formData.allergies,
+    medical_conditions: formData.medical_conditions,
+    medications: formData.medications,
+    emergency_contact_name: formData.emergency_contact_name,
+    emergency_contact_phone: formData.emergency_contact_phone,
   };
+
+  // Optional login method
+  if (loginMethod === 'email') {
+    payload.email = formData.email;
+  } else {
+    payload.phone = formData.phone.replace(/\s/g, '');
+  }
+
+  // Optional subscription: only send if user picked family or premium
+  if (formData.plan && formData.plan !== 'basic') {
+    payload.subscribe = true; // backend will map this to is_subscribed
+  }
+
+  registerMutation.mutate(payload);
+};
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;

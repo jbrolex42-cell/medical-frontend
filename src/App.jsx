@@ -22,11 +22,12 @@ const TrackAmbulance = lazy(() => import("./pages/TrackAmbulance"));
 /* Staff */
 const EMTDashboard = lazy(() => import("./pages/EMTDashboard"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
-const EmergencyQueue = lazy(() => import("./pages/EmergencyQueue")); // New
+const EmergencyQueue = lazy(() => import("./pages/EmergencyQueue"));
 
 /* Medical */
 const Telemedicine = lazy(() => import("./pages/Telemedicine"));
 
+/* ---------------- Query Client ---------------- */
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -37,20 +38,26 @@ const queryClient = new QueryClient({
   },
 });
 
-const ProtectedRoute = ({ children, allowedRoles }) => {
-  const { user, isAuthenticated } = useAuthStore();
-
-  if (!isAuthenticated) return <Navigate to="/login" replace />;
-
-  if (allowedRoles && !allowedRoles.includes(user?.role)) return <Navigate to="/" replace />;
-
-  return children;
-};
-
+/* ---------------- Loader ---------------- */
 const Loader = () => (
   <div style={{ padding: "40px", textAlign: "center" }}>Loading...</div>
 );
 
+/* ---------------- Protected Route ---------------- */
+const ProtectedRoute = ({ children, allowedRoles }) => {
+  const { user, isAuthenticated } = useAuthStore();
+
+  // Not logged in → redirect to login
+  if (!isAuthenticated) return <Navigate to="/login" replace />;
+
+  // User role not allowed → redirect to home
+  if (allowedRoles && !allowedRoles.includes(user?.role)) return <Navigate to="/" replace />;
+
+  // Allowed → render children
+  return children;
+};
+
+/* ---------------- App Component ---------------- */
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -58,7 +65,6 @@ function App() {
         <BrowserRouter>
           <Suspense fallback={<Loader />}>
             <Routes>
-
               {/* Layout Wrapper */}
               <Route element={<Layout />}>
 
@@ -138,7 +144,6 @@ function App() {
 
               {/* 404 */}
               <Route path="*" element={<NotFound />} />
-
             </Routes>
           </Suspense>
         </BrowserRouter>

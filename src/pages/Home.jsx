@@ -6,13 +6,11 @@ import {
   Globe, Award, CheckCircle2, ArrowRight, Menu, X,
   Play, Pause, Zap, Droplets, Thermometer, Stethoscope,
   Baby, Bone, Flame, Wind, AlertTriangle, Car
-} from 'lucide-react';
+       } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../stores/authStore';
 import Footer from '../components/Footer';
 
-
-// Animated Counter Component
 const AnimatedCounter = ({ target, suffix = '', duration = 2 }) => {
   const [count, setCount] = useState(0);
   
@@ -34,7 +32,6 @@ const AnimatedCounter = ({ target, suffix = '', duration = 2 }) => {
   return <span>{count.toLocaleString()}{suffix}</span>;
 };
 
-// Emergency Type Card
 const EmergencyTypeCard = ({ icon: Icon, title, color, delay }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -172,7 +169,7 @@ export default function Home() {
             <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
               <Ambulance className="text-white" size={24} />
             </div>
-            <span className="font-bold text-xl text-gray-900">SwiftEMS</span>
+            <span className="font-bold text-xl text-gray-900">EMERGENCY MEDICAL SERVICE</span>
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
@@ -581,7 +578,7 @@ export default function Home() {
               <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
                 <Ambulance className="text-white" size={24} />
               </div>
-              <span className="font-bold text-xl text-white">SwiftEMS</span>
+              <span className="font-bold text-xl text-white">EMS</span>
             </div>
             <p className="text-sm leading-relaxed">
               Kenya's most trusted emergency medical services platform. 
@@ -616,16 +613,15 @@ export default function Home() {
                 <Phone size={14} /> Emergency: 999
               </li>
               <li className="flex items-center gap-2">
-                <Phone size={14} /> Support: 0700 000 000
+                <Phone size={14} /> Support: 0757751980
               </li>
-              <li>help@swiftems.co.ke</li>
+              <li>JBROLEX42@GMAIL.COM</li>
               <li>Nairobi, Kenya</li>
             </ul>
           </div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>&copy; 2024 SwiftEMS. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition">Privacy Policy</a>
             <a href="#" className="hover:text-white transition">Terms of Service</a>
@@ -653,5 +649,3 @@ export default function Home() {
     </div>
   );
 }
-
-<Footer />

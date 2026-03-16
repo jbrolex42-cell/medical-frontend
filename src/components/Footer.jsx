@@ -28,8 +28,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex gap-4 mt-4 md:mt-0">
-          <a href="tel:+254700000000">+254 700 000 000</a>
-          <a href="tel:+254711111111">+254 711 111 111</a>
+          <a href="tel:+254700000000" className="hover:text-white transition">+254 700 000 000</a>
+          <a href="tel:+254711111111" className="hover:text-white transition">+254 711 111 111</a>
         </div>
       </div>
 
@@ -67,10 +67,36 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-4">
-        <p className="text-sm">
-          &copy; {new Date().getFullYear()} SwiftEMS. Made with <Heart size={14} className="inline text-red-500" /> in Nairobi.
-        </p>
+      <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-6 gap-4">
+        <div className="text-sm text-center md:text-left">
+          <p>
+            &copy; {new Date().getFullYear()} EMS. Made with <Heart size={14} className="inline text-red-500" /> in Nairobi.
+          </p>
+          <p className="font-bold text-gray-200 uppercase tracking-widest mt-1">ROLEX</p>
+        </div>
+
+        {/* Social Links Added Here */}
+        <div className="flex items-center gap-3">
+          {/* WhatsApp */}
+          <a 
+            href="https://wa.me/254757751980"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition text-sm"
+          >
+            Chat on WhatsApp
+          </a>
+          
+          {/* Instagram */}
+          <a 
+            href="https://www.instagram.com/irolex0?igsh=MTZ6NmlwamNidmE0NQ=="
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-medium transition text-sm"
+          >
+            Instagram
+          </a>
+        </div>
       </div>
 
       {/* Scroll to Top */}
@@ -81,7 +107,7 @@ export default function Footer() {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
-            className="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-red-700 transition z-50"
+            className="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-red-700 transition z-50 shadow-lg"
           >
             <ArrowUp size={24} />
           </motion.button>
