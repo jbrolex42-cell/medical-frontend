@@ -36,6 +36,7 @@
     "lint:fix": "eslint . --fix",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build": "CI=false react-scripts build",
     "clean:frontend": "npx eslint ./src --ext .js,.jsx --fix && npx jscodeshift -t https://raw.githubusercontent.com/skovy/unused-imports-codemod/main/remove-unused-imports.js ./src"
   },
   "eslintConfig": {
@@ -65,7 +66,7 @@
     "@babel/core": "^7.29.0",
     "@babel/eslint-parser": "^7.28.6",
     "@eslint/js": "^10.0.1",
-    "eslint": "^9.39.4",
+    "eslint": "^10.0.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unused-imports": "^4.4.1",
