@@ -1,15 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Video, VideoOff, Mic, MicOff, PhoneOff, 
-  MessageSquare, Send, MoreVertical, User, 
-  Stethoscope, FileText, Pill, Activity, 
-  ChevronLeft, Clock, AlertCircle, CheckCircle2,
-  ScreenShare, Settings, Fullscreen
-} from 'lucide-react';
+
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-// ✅ Fixed: default import for API
 import api from '../services/api';
 
 export default function Telemedicine() {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Ambulance, Truck, CheckCircle, XCircle, AlertTriangle, Wrench } from 'lucide-react';
+import { Ambulance, CheckCircle, XCircle, AlertTriangle, Wrench } from 'lucide-react';
 
 export default function FleetStatusPanel({ fleetData = [] }) {
   const [filter, setFilter] = useState('all');

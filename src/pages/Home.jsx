@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { 
-  Ambulance, Heart, Clock, MapPin, Shield, Phone, 
-  ChevronRight, Star, Users, Activity, Brain, 
-  Globe, Award, CheckCircle2, ArrowRight, Menu, X,
-  Play, Pause, Zap, Droplets, Thermometer, Stethoscope,
-  Baby, Bone, Flame, Wind, AlertTriangle, Car
-       } from 'lucide-react';
+import {  Flame, Wind } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../stores/authStore';
 import Footer from '../components/Footer';

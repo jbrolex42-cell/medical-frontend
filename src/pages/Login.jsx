@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; // ✅ Added AnimatePresence import
-import { 
-  Mail, Phone, Lock, Eye, EyeOff, ArrowRight, 
-  AlertCircle, CheckCircle2, Ambulance 
-} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail} from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 

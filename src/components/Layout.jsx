@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, useLocation, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Ambulance, Menu, X, Bell, User, ChevronDown,
-  LogOut, Settings, Phone, Shield,
+  Ambulance, Menu, X, ChevronDown, Phone, Shield,
   Activity, Home, LayoutDashboard,
   Users, FileText, AlertTriangle, Heart
 } from 'lucide-react';

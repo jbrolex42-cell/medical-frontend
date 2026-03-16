@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, MessageSquare, Navigation, Clock, User } from 'lucide-react';
+import { Phone, MessageSquare, Clock, User } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 // ✅ Fixed: default import
 import api from '../services/api';

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion} from 'framer-motion';
 import { 
   Ambulance, MapPin, Navigation, Phone, Clock, 
-  CheckCircle2, AlertCircle, User, Heart, Activity,
-  ChevronRight, Menu, X, LogOut, Bell, Settings,
-  FileText, Camera, Mic, Send, Map, Route
+  CheckCircle2, AlertCircle, User, Heart, LogOut, Settings,
+  FileText, Camera, Mic, Map, 
        } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useSocket } from '../hooks/useSocket';
@@ -394,7 +393,6 @@ export default function EMTDashboard() {
         {/* Mobile Header */}
         <header className="bg-white border-b px-4 py-3 flex items-center justify-between md:hidden">
           <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2">
-            {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           <span className="font-bold">EMT Dashboard</span>
           <div className="w-8" />

@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Activity, Ambulance, Users, AlertTriangle, 
-  TrendingUp, Map, Phone, Clock, Hospital,
-  Droplets, Radio, BarChart3, Settings, LogOut,
-  Search, Filter, MoreVertical, CheckCircle,
-  XCircle, Navigation, Zap
-} from 'lucide-react';
+import { Activity} from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import api from '../services/api';
 import { useSocket } from '../hooks/useSocket';

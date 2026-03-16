@@ -5,45 +5,17 @@ import {
   Brain,
   Bone,
   Flame,
-  Droplets,
-  Baby,
-  AlertTriangle,
-  Activity,
   Wind,
-  Thermometer,
-  Eye,
-  Stethoscope,
-  Car,
-  Zap,
-  Waves,
-  Mountain,
-  Bug,
-  Skull,
-  ChevronRight,
-  ChevronLeft,
-  Mic,
-  MapPin,
-  Phone,
-  Camera,
-  User,
-  Ambulance,
-  CheckCircle2,
-  X,
-  Plus,
-  RefreshCw
+  Car
+  
 } from "lucide-react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 
 import api from "../services/api";
 import { useAuthStore } from "../stores/authStore";
 import MapComponent from "../components/MapComponent";
-
-
-// ----------------------
-// Emergency Categories
-// ----------------------
 
 const EMERGENCY_CATEGORIES = [
 {
